@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weather App</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <!-- build:css css/styles.min.css -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/lib/jquery-ui.min.css">
+  <link rel="stylesheet" href="css/lib/swiper.min.css">
+  <link rel="stylesheet" href="css/animation.css">
+  <link rel="stylesheet" href="css/components/sun.css">
+  <link rel="stylesheet" href="css/components/background.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- endbuild -->
+</head>
+<body>
+<div id="bb-test-view"></div>
+<div class="wrapper">
+  <div class="swiper-container" id="cities-gallery-list">
+    <div class="swiper-wrapper">
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+  <aside class="configs" id="sidebar">
+    <header class="sidebar-header">
+      <i class="icon-menu" id="icon-menu"></i>
+      <div class="configs-header">
+        <input class="hidden" id="search-input" type="text" name="search-place">
+        <i class="icon-add toggle-search-icon" id="toggle-search"></i>
+        <i class="icon-delete" id="remove-add"></i>
+      </div>
+    </header>
+    <ul class="places-list" id="cities-list">
+    </ul>
+    <ul class="places-list checklist hidden" id="search-list">
+    </ul>
+    <div class="configs-footer">
+      <div class="settings-header">
+        <span id="temperature-to-celsius">°C</span>
+        <span id="temperature-to-fahrenheit">°F</span>
+        <i class="icon-settings"></i>
+      </div>
+      <div class="settings-block">
+        <label for="show-weather-for">show weather for</label>
+        <span><span id="show-weather-for-val">4</span> days</span>
+      </div>
+      <div class="settings-slider" id="show-weather-for"></div>
+      <div class="settings-block">
+        <label for="update-weather-every">update weather every</label>
+        <span><span id="update-weather-every-val">15</span> min</span>
+      </div>
+      <div class="settings-slider" id="update-weather-every"></div>
+    </div>
+  </aside>
+</div>
+<div class="bgs">
+  <div class="bg">
+    <div></div>
+  </div>
+  <div class="bg">
+    <div></div>
+  </div>
+</div>
+<div class="bgs-season">
+  <div data-time-day="morning" data-season="cold"></div>
+  <div class="transparent"></div>
+</div>
+<div class="sun-container" id="sun">
+  <div></div>
+</div>
+<!--build:js-->
+<script data-main="js/main" src="js/lib/require.min.js"></script>
+<!--endbuild-->
+</body>
+</html>
+

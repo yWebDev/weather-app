@@ -1,0 +1,37 @@
+{
+  "name": "WeatherApp",
+  "version": "1.0.0",
+  "description": "weather application",
+  "devDependencies": {
+    "del": "^2.2.1",
+    "gulp": "^3.9.1",
+    "gulp-connect": "^4.1.0",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-eslint": "^2.0.0",
+    "gulp-html-replace": "^1.6.1",
+    "gulp-if": "^2.0.1",
+    "gulp-karma": "0.0.5",
+    "gulp-requirejs-optimize": "^1.0.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-useref": "^3.1.0",
+    "gulp-watch": "^4.3.8",
+    "http-server": "^0.9.0",
+    "jasmine": "^2.4.1",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-browserify": "^5.0.5",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-coverage": "^1.0.0",
+    "karma-jasmine": "^1.0.2",
+    "karma-requirejs": "^1.0.0",
+    "requirejs": "^2.2.0",
+    "watchify": "^3.7.0"
+  },
+  "scripts": {
+    "start": "npm install && gulp",
+    "build": "gulp build",
+    "dev": "gulp dev",
+    "test": "gulp test"	
+  },
+  "license": "ISC"
+}

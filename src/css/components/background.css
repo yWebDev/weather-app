@@ -1,0 +1,97 @@
+.bgs-season div {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -20;
+  opacity: 1;
+  transition: opacity .4s ease-in-out;
+}
+
+.bgs-season div.transparent {
+  opacity: 0;
+}
+
+[data-time-day=day][data-season=cold] {
+  background: #166eef;
+}
+
+[data-time-day=morning][data-season=cold] {
+  background: -webkit-linear-gradient(left, #166eef, #080b22);
+  background: linear-gradient(to right, #166eef, #080b22);
+}
+
+[data-time-day=night][data-season=cold] {
+  background: #080b22;
+}
+
+[data-time-day=evening][data-season=cold] {
+  background: -webkit-linear-gradient(left, #080b22, #166eef);
+  background: linear-gradient(to right, #080b22, #166eef);
+}
+
+[data-time-day=day][data-season=hot] {
+  background: #ff7200;
+}
+
+[data-time-day=morning][data-season=hot] {
+  background: -webkit-linear-gradient(left, #ff7200, #080b22);
+  background: linear-gradient(to right, #ff7200, #080b22);
+}
+
+[data-time-day=night][data-season=hot] {
+  background: #080b22;
+}
+
+[data-time-day=evening][data-season=hot] {
+  background: -webkit-linear-gradient(left, #080b22, #ff7200);
+  background: linear-gradient(to right, #080b22, #ff7200);
+}
+
+.bgs {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+.bg {
+  top: 0;
+  left: -12em;
+  position: fixed;
+  opacity: .3;
+  width: 120%; /*for browser not supported calc*/
+  width: calc(100% + 12em);
+  height: 100%;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  z-index: -10;
+}
+
+.bg:nth-child(2) {
+  top: -200px;
+  height: 200px;
+}
+
+.bg div {
+  height: 100%;
+}
+
+.rain {
+  -webkit-animation: fall 1.5s linear infinite;
+  animation: fall 1.5s linear infinite;
+}
+
+.snow {
+  -webkit-animation: fall-with-offset 5s linear infinite;
+  animation: fall-with-offset 5s linear infinite;
+}
+
+.rain div {
+  background: url('../../images/rain.png') 0 0 repeat;
+}
+
+.snow div {
+  background: url('../../images/snow.png') 0 0 repeat;
+}

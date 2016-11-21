@@ -1,0 +1,88 @@
+<div class="swiper-slide">
+  <section class="main">
+    <div class="weather-details">
+      <div class="selected-locality-info">
+        <span class="current-time"><%= forecast.current.time %></span>
+        <i class="icon-refresh refresh-forecast"></i>
+        <h1 class="location-heading"><%= placeData.locality %></h1>
+        <h2><%= forecast.current.dayName %>, <%= forecast.current.monthName %> <%= forecast.current.dateNumber %></h2>
+        <div class="current-data">
+          <div class="current-weather-icon">
+            <i class="icon-<%= forecast.current.icon %>"></i>
+          </div>
+          <div class="current-weather">
+            <div class="current-temperature temperature"
+                 data-temperature-value="<%= forecast.current.temperature %>"><%= forecast.current.temperature %>°</div>
+            <div class="current-weather-desc">// <%= forecast.current.summary %></div>
+          </div>
+          <div class="current-weather-additional">
+            <div class="current-moon-phase">
+              <i class="icon-<%= forecast.current.moonPhaseIcon %>"></i>
+            </div>
+            <div class="current-weather-timestamp">6:20</div>
+          </div>
+        </div>
+      </div>
+      <div class="weather-today-wrapper">
+        <div class="weather-today">
+          <ul class="weather-today-list">
+            <% _.each(forecast.hourly, function(hourlyForecast) { %>
+            <li>
+              <div class="weather-today-desc">
+                <span><%= hourlyForecast.time %></span>
+                <i class="icon-<%= hourlyForecast.icon %>"></i>
+                <span class="temperature"
+                      data-temperature-value="<%= hourlyForecast.temperature %>"><%= hourlyForecast.temperature %>°</span>
+              </div>
+            </li>
+            <% }) %>
+          </ul>
+        </div>
+        <div class="weather-today-parameters">
+          <div>
+            <i class="icon-humidity"></i>
+            <span><%= forecast.current.humidity %>%</span>
+          </div>
+          <div>
+            <style>
+              .wind-direction-<%= placeData.placeID %> {
+                transform: rotate(<%= forecast.current.windBearing %>deg);
+              }
+              .wind-direction-<%= placeData.placeID %>:after {
+                content: '<%= forecast.current.windDirection %>';
+                transform: rotate(-<%= forecast.current.windBearing %>deg);
+              }
+            </style>
+            <i class="icon-wind-direction wind-direction-<%= placeData.placeID %>"></i>
+            <span><%= forecast.current.windSpeed %><sup>m/s</sup></span>
+          </div>
+          <div>
+            <i class="icon-sunrise"></i>
+            <span><%= forecast.current.sunriseTime %></span>
+          </div>
+          <div>
+            <i class="icon-sunset"></i>
+            <span><%= forecast.current.sunsetTime %></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="daily-forecast" id="daily-forecast-list">
+      <div class="daily-forecast-wrapper">
+        <% _.each(forecast.daily, function(dailyForecast, number) {%>
+        <div class="daily-forecast-data hidden">
+          <span class="daily-forecast-title"><%= number === 0 ? 'Today' : dailyForecast.dayName %></span>
+          <i class="icon-<%= dailyForecast.icon %>"></i>
+          <div class="daily-forecast-temperature">
+            <span class="temperature"
+                  data-temperature-value="<%= dailyForecast.temperatureMin %>"><%= dailyForecast.temperatureMin %>°</span>
+            <div></div>
+            <span class="temperature"
+                  data-temperature-value="<%= dailyForecast.temperatureMax %>"><%= dailyForecast.temperatureMax %>°</span>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+  </section>
+</div>

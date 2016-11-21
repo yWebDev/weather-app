@@ -1,0 +1,12 @@
+<li class="places-list__item places-list__item--clickable">
+  <div>
+    <span><%= locality %></span><br>
+    <span>// <%= country %></span>
+  </div>
+  <label class="checkbox-wrapper" for="<%= placeID %>">
+    <input class="place-check" id="<%= placeID %>"
+           value="{ &quot;placeID&quot; : &quot;<%= placeID %>&quot;, &quot;locality&quot; : &quot;<%= locality %>&quot;, &quot;country&quot; : &quot;<%= country %>&quot; }"
+           type="checkbox">
+    <i class="icon-check"></i>
+  </label>
+</li>

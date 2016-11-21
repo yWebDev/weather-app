@@ -1,0 +1,15 @@
+<li class="places-list__item cities-list__item">
+  <i class="icon-<%= forecast.current.icon %>"></i>
+  <span class="temperature"
+        data-temperature-value="<%= forecast.current.temperature %>"><%= forecast.current.temperature %>°</span>
+  <div>
+    <span><%= placeData.locality %></span><br>
+    <span>// <%= forecast.current.summary %></span>
+  </div>
+  <label class="checkbox-wrapper city-remove-label hidden" for="r-<%= placeData.placeID %>">
+    <input class="city-remove" id="r-<%= placeData.placeID %>"
+           value="<%= placeData.placeID %>"
+           type="checkbox">
+    <i class="icon-check"></i>
+  </label>
+</li>

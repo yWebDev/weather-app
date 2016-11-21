@@ -1,0 +1,58 @@
+/* animate the drops*/
+@keyframes fall {
+  to {
+    margin-top: 200px;
+  }
+}
+
+@-webkit-keyframes fall {
+  to {
+    margin-top: 200px;
+  }
+}
+
+@-moz-keyframes fall {
+  to {
+    margin-top: 200px;
+  }
+}
+
+/*fall animate with offset*/
+@keyframes fall-with-offset {
+  0% {
+    left: -12em;
+  }
+  50% {
+    left: 0;
+  }
+  100% {
+    margin-top: 200px;
+    left: -12em;
+  }
+}
+
+@-webkit-keyframes fall-with-offset {
+  0% {
+    left: -12em;
+  }
+  50% {
+    left: 0;
+  }
+  100% {
+    margin-top: 200px;
+    left: -12em;
+  }
+}
+
+@-moz-keyframes fall-with-offset {
+  0% {
+    left: -12em;
+  }
+  50% {
+    left: 0;
+  }
+  100% {
+    margin-top: 200px;
+    left: -12em;
+  }
+}
